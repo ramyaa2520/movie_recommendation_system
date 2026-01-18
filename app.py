@@ -7,9 +7,13 @@ from model.recommender import MovieRecommender
 app = Flask(__name__)
 
 # Configure CORS for production
+# Configure CORS
+# In production, set FRONTEND_URL to your deployed frontend URL (e.g., https://myapp.vercel.app)
+frontend_url = os.environ.get("FRONTEND_URL", "*")
+
 CORS(app, resources={
     r"/*": {
-        "origins": ["*"],  # In production, replace with your frontend URL
+        "origins": [frontend_url],
         "methods": ["GET", "POST"],
         "allow_headers": ["Content-Type"]
     }
