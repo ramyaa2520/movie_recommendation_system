@@ -1,0 +1,135 @@
+.feedback-recommendations {
+    position: relative;
+}
+
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    gap: 1.5rem;
+}
+
+.loading-page .loading {
+    width: 60px;
+    height: 60px;
+    border-width: 5px;
+}
+
+.feedback-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2.5rem;
+    min-width: 200px;
+    transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-icon.liked {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.stat-icon.disliked {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.movies-section {
+    margin-top: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.action-section {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-section .btn {
+    min-width: 220px;
+}
+
+@media (max-width: 768px) {
+    .feedback-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        min-width: auto;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .action-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-section .btn {
+        width: 100%;
+        max-width: 350px;
+    }
+}
