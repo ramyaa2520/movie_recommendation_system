@@ -1,11 +1,13 @@
 services:
-  # Backend API Service
   - type: web
     name: movie-recommender-api
     env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: python app.py
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
       - key: PORT
         value: 10000
     autoDeploy: false
